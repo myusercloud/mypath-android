@@ -1,5 +1,6 @@
 package com.harry.sokomart.ui.screens.item
 
+import android.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -12,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.ui.theme.mytheme
+import com.harry.sokomart.ui.theme.white
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -23,7 +25,8 @@ fun ItemScreen(navController: NavController){
         TopAppBar(
             title = { Text(text = "Item") },
             colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = mytheme
+                containerColor = mytheme,
+                titleContentColor = white
             )
         )
     }
