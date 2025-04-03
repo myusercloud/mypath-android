@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -38,7 +39,7 @@ fun StartScreen(navController: NavController){
         verticalArrangement = Arrangement.Center
     ){
         Text(
-            text = "Welcome",
+            text = "Kai & Karo",
             fontSize = 40.sp,
             color = mytheme,
             fontWeight = FontWeight.Bold
@@ -47,11 +48,11 @@ fun StartScreen(navController: NavController){
         Image(
             painter = painterResource(R.drawable.img),
             contentDescription = "home",
-            modifier = Modifier.size(300.dp)
+            modifier = Modifier.size(300.dp).clip(shape = RoundedCornerShape(10.dp))
         )
         Spacer(modifier = Modifier.height(20.dp))
         Text(
-            text = "Place your order today",
+            text = "Buy a Car today",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
             color = mytheme
