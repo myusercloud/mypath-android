@@ -60,7 +60,7 @@ fun ItemScreen(navController: NavController){
         //TopAppBar
         TopAppBar(
             title = {
-              Text(text = "Kai & Karo")
+              Text(text = "Kai & Karo | Cars")
                     },
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = mytheme,
