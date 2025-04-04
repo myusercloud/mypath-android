@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.R
+import com.harry.sokomart.navigation.ROUT_ITEM
 import com.harry.sokomart.ui.theme.mytheme
 import com.harry.sokomart.ui.theme.newcyan
 
@@ -63,7 +64,9 @@ fun StartScreen(navController: NavController){
             textAlign = TextAlign.Center
         )
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(ROUT_ITEM)
+            },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)

@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -82,152 +84,295 @@ fun ItemScreen(navController: NavController){
         )
         //End of TopAppBar
 
+        Column (
+            modifier = Modifier.verticalScroll(rememberScrollState())
+        ){
+            //Start row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Porsche Cayenne",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
 
-        //Searchbar
-        Spacer(modifier = Modifier.height(20.dp))
-        var search by remember { mutableStateOf("") }
-        Box {
-            OutlinedTextField(
-                value = search,
-                onValueChange = { search = it },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 20.dp, end = 20.dp),
-                leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
-                placeholder = { Text(text = "Search...") }
-            )
-        }
-        //end of Search bar
-        Spacer(modifier = Modifier.height(10.dp))
-
-        //Start row
-        Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
-            Image(
-                painter = painterResource(id = R.drawable.img),
-                contentDescription = "home",
-                modifier = Modifier.width(200.dp).height(200.dp)
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-            Column (){
-                Text(
-                    text = "Porsche Cayenne",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = "A reliable SUV just for you.",
-                    fontSize = 19.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = "Ksh 12.4 million",
-                    textDecoration = TextDecoration.LineThrough,
-                    fontSize = 19.sp
-                )
-                Text(
-                    text = "Ksh 3.4 million",
-                    fontSize = 19.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Row (){
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
                 }
-
             }
-        }
-        //End row
-        Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
-            Image(
-                painter = painterResource(id = R.drawable.img_1),
-                contentDescription = "home",
-                modifier = Modifier.width(200.dp).height(200.dp)
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-            Column (){
-                Text(
-                    text = "Golf R",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+            //End row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img_1),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
                 )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = "A reliable SUV just for you.",
-                    fontSize = 19.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = "Ksh 12.4 million",
-                    textDecoration = TextDecoration.LineThrough,
-                    fontSize = 19.sp
-                )
-                Text(
-                    text = "Ksh 3.4 million",
-                    fontSize = 19.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Row (){
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Golf R",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
+
                 }
-
             }
-        }
-        //Start row
-        Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
-            Image(
-                painter = painterResource(id = R.drawable.img_2),
-                contentDescription = "home",
-                modifier = Modifier.width(200.dp).height(200.dp)
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-            Column (){
-                Text(
-                    text = "Mercedes Amg",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+            //Start row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img_2),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
                 )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = "A reliable SUV just for you.",
-                    fontSize = 19.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = "Ksh 12.4 million",
-                    textDecoration = TextDecoration.LineThrough,
-                    fontSize = 19.sp
-                )
-                Text(
-                    text = "Ksh 3.4 million",
-                    fontSize = 19.sp
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Row (){
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Mercedes Amg",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
+
                 }
-
             }
+            //End row
+            //Start row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img_4),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Mercedes Amg G63",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
+
+                }
+            }
+            //End row
+            //Start row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img_3),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Mercedes Amg gt",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
+
+                }
+            }
+            //End row
+            //Start row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img_2),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Mercedes Amg",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
+
+                }
+            }
+            //End row
+            //Start row
+            Row (modifier = Modifier.padding(start = 5.dp, end = 5.dp)){
+                Image(
+                    painter = painterResource(id = R.drawable.img_5),
+                    contentDescription = "home",
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Column (){
+                    Text(
+                        text = "Cherokee Trackhawk",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "A reliable SUV just for you.",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = "Ksh 12.4 million",
+                        textDecoration = TextDecoration.LineThrough,
+                        fontSize = 19.sp
+                    )
+                    Text(
+                        text = "Ksh 3.4 million",
+                        fontSize = 19.sp
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (){
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "")
+                    }
+
+                }
+            }
+            //End row
         }
-        //End row
-
-
-
-
-
-
-
     }
 }
 
