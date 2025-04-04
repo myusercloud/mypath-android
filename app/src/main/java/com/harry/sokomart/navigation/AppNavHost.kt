@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.ui.screens.about.AboutScreen
 import com.harry.sokomart.ui.screens.home.HomeScreen
+import com.harry.sokomart.ui.screens.item.ItemScreen
 
 @Composable
 fun AppNavHost(
@@ -26,6 +27,9 @@ fun AppNavHost(
         }
         composable(ROUT_ABOUT) {
             AboutScreen(navController)
+        }
+        composable(ROUT_ITEM) {
+            ItemScreen(navController)
         }
 
     }
