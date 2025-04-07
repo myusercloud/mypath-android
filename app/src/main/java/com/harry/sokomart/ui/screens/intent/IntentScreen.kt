@@ -1,5 +1,7 @@
 package com.harry.sokomart.ui.screens.intent
 
+import android.content.Intent
+import android.provider.MediaStore
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.navigation.ROUT_ITEM
@@ -87,9 +90,13 @@ fun IntentScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        //sms
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                val smsIntent=Intent(Intent.ACTION_SENDTO)
+                smsIntent.data="smsto:0720245837".toUri()
+                smsIntent.putExtra("sms_body","Hello Glory,how was your day?")
+                mContext.startActivity(smsIntent)
             },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
@@ -102,7 +109,9 @@ fun IntentScreen(navController: NavController){
 
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                val callIntent=Intent(Intent.ACTION_DIAL)
+                callIntent.data="tel:0720245837".toUri()
+                mContext.startActivity(callIntent)
             },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
@@ -113,9 +122,15 @@ fun IntentScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        //camera
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                val cameraIntent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                if (cameraIntent.resolveActivity(mContext.packageManager)!=null){
+                    mContext.startActivity(cameraIntent)
+                }else{
+                    println("Camera app is not available")
+                }
             },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
@@ -126,9 +141,15 @@ fun IntentScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        //email
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "text/plain"
+                shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("akinyiglory2@gmail.com"))
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the email body")
+                mContext.startActivity(shareIntent)
             },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
