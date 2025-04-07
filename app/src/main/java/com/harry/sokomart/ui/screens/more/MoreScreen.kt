@@ -70,6 +70,7 @@ fun MoreScreen(navController: NavController){
         //box start
         Box (
             modifier = Modifier.fillMaxWidth().height(250.dp)
+
         ){
             Text(
                 text = "Porsche Cayenne",
@@ -89,6 +90,16 @@ fun MoreScreen(navController: NavController){
 
         }
         //end of box
+        Spacer(modifier = Modifier.height(20.dp))
+        Text(
+            text = "Porsche Cayenne",
+            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp
+        )
+        Spacer(modifier = Modifier.height(20.dp))
+        //row start
+
+        //row end
     }
 
 }
