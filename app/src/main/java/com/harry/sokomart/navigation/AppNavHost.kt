@@ -12,6 +12,7 @@ import com.harry.sokomart.ui.screens.about.AboutScreen
 import com.harry.sokomart.ui.screens.home.HomeScreen
 import com.harry.sokomart.ui.screens.intent.IntentScreen
 import com.harry.sokomart.ui.screens.item.ItemScreen
+import com.harry.sokomart.ui.screens.more.MoreScreen
 import com.harry.sokomart.ui.screens.start.StartScreen
 
 @RequiresApi(Build.VERSION_CODES.M)
@@ -41,6 +42,9 @@ fun AppNavHost(
         }
         composable(ROUT_INTENT) {
             IntentScreen(navController)
+        }
+        composable(ROUT_MORE) {
+            MoreScreen(navController)
         }
 
     }

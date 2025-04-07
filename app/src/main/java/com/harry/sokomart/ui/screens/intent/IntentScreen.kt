@@ -94,7 +94,7 @@ fun IntentScreen(navController: NavController){
         Button(
             onClick = {
                 val smsIntent=Intent(Intent.ACTION_SENDTO)
-                smsIntent.data="smsto:0720245837".toUri()
+                smsIntent.data="smsto:0797752627".toUri()
                 smsIntent.putExtra("sms_body","Hello Glory,how was your day?")
                 mContext.startActivity(smsIntent)
             },

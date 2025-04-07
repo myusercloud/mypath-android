@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -46,6 +47,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.R
+import com.harry.sokomart.navigation.ROUT_INTENT
 import com.harry.sokomart.ui.theme.mytheme
 import com.harry.sokomart.ui.theme.white
 import org.w3c.dom.Text
@@ -68,16 +70,14 @@ fun ItemScreen(navController: NavController){
                 navigationIconContentColor = white,
                 actionIconContentColor = white
             ),
-            navigationIcon = {
-               // IconButton(onClick = {}) {
-                 //   Icon(imageVector = Icons.Default.Navigation, contentDescription = "")
-
-              //  }
-            },
-
             actions = {
                 IconButton(onClick = {}) {
                     Icon(imageVector = Icons.Default.Notifications, contentDescription = "")
+                }
+                IconButton(onClick = {
+                    navController.navigate(ROUT_INTENT)
+                }) {
+                    Icon(imageVector = Icons.Default.ArrowForward, contentDescription = "")
                 }
             },
 
