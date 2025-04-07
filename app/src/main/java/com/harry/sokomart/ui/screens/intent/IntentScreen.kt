@@ -23,6 +23,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -37,6 +38,7 @@ fun IntentScreen(navController: NavController){
     Column (
         modifier = Modifier.fillMaxSize()
     ){
+        val mContext = LocalContext.current
         //TopAppBar
         TopAppBar(
             title = {
@@ -68,9 +70,13 @@ fun IntentScreen(navController: NavController){
         //End of TopAppBar
         Spacer(modifier = Modifier.height(10.dp))
 
+
+        //Mpesa
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                val simToolKitLaunchIntent =
+                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                simToolKitLaunchIntent?.let { mContext.startActivity(it) }
             },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
