@@ -1,5 +1,6 @@
 package com.harry.sokomart.ui.screens.more
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -56,6 +57,9 @@ fun MoreScreen(navController: NavController){
             )
         //End of TopAppBar
         Spacer(modifier = Modifier.height(20.dp))
+        //box start
+        Box (){  }
+        //end of box
     }
 
 }
