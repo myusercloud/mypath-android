@@ -46,9 +46,6 @@ fun MoreScreen(navController: NavController){
 
             actions = {
                 IconButton(onClick = {}) {
-                    Icon(imageVector = Icons.Default.Share, contentDescription = "")
-                }
-                IconButton(onClick = {}) {
                     Icon(imageVector = Icons.Default.Settings, contentDescription = "")
                 }
             },
