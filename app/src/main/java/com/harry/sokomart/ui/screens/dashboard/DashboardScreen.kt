@@ -3,10 +3,13 @@ package com.harry.sokomart.ui.screens.dashboard
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -54,6 +57,25 @@ fun AboutScreen(navController: NavController){
             }
         }
         //end of card
+        Row (
+            modifier = Modifier.padding(20.dp)
+        ){
+            Card (
+                modifier = Modifier.width(150.dp).height(180.dp)
+            ){
+                Column (
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                ){
+                    Image(
+                        painter = painterResource(R.drawable.img_4),
+                        contentDescription = "home",
+                        modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    )
+                }
+            }
+        }
     }
 
 }
