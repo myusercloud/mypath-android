@@ -147,6 +147,18 @@ fun MoreScreen(navController: NavController){
             Text(text = "Purchase Here")
         }
         Spacer(modifier = Modifier.width(10.dp))
+        Text(
+            text = "Reviews",
+            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp,
+            modifier = Modifier.padding(start = 10.dp, top = 10.dp)
+        )
+        //Text(
+        //    text = "This mid-size, two-row luxury crossover is unnaturally light on its feet, with chassis tuning derived from over two decades of performance-SUV supremacy.\n" +
+          //          "US86,695.00 · 4.8 · Review by Drew Dorian\n" +
+            //        "\u200ETested: 2024 Porsche... · \u200E2025 Porsche Cayenne Hybrid · \u200EView Photos · \u200E2024",
+            //fontSize = 18.dp,
+       // )
 
     }
 
