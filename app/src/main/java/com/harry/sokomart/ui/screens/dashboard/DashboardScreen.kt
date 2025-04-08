@@ -103,6 +103,51 @@ fun AboutScreen(navController: NavController){
             }
             Spacer(modifier = Modifier.height(20.dp))
         }
+        Row (
+            modifier = Modifier.padding(20.dp)
+        ){
+            Spacer(modifier = Modifier.width(20.dp))
+            Card (
+                modifier = Modifier.width(150.dp).height(180.dp),
+                elevation = CardDefaults.cardElevation(10.dp)
+            ){
+                Column (
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                ){
+                    Image(
+                        painter = painterResource(R.drawable.img_4),
+                        contentDescription = "home",
+                        modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    )
+                    Text(
+                        text = "Home"
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.width(20.dp))
+            Card (
+                modifier = Modifier.width(150.dp).height(180.dp),
+                elevation = CardDefaults.cardElevation(10.dp)
+            ){
+                Column (
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                ){
+                    Image(
+                        painter = painterResource(R.drawable.img_1),
+                        contentDescription = "home",
+                        modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    )
+                    Text(
+                        text = "Products"
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(20.dp))
+        }
     }
 
 }
