@@ -146,6 +146,7 @@ fun MoreScreen(navController: NavController){
         ) {
             Text(text = "Purchase Here")
         }
+        Spacer(modifier = Modifier.width(10.dp))
 
     }
 
