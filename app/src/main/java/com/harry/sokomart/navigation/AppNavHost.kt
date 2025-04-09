@@ -49,6 +49,9 @@ fun AppNavHost(
         composable(ROUT_DASHBOARD) {
             MoreScreen(navController)
         }
+        composable(ROUT_SERVICE) {
+            MoreScreen(navController)
+        }
 
     }
 }
