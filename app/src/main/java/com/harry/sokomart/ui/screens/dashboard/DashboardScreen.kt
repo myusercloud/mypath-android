@@ -1,6 +1,7 @@
 package com.harry.sokomart.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,6 +27,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.R
+import com.harry.sokomart.navigation.ROUT_ITEM
+import com.harry.sokomart.navigation.ROUT_START
 import com.harry.sokomart.ui.theme.mytheme
 
 @Composable
@@ -45,7 +48,7 @@ fun AboutScreen(navController: NavController){
                 verticalArrangement = Arrangement.Center
             ){
                 Image(
-                    painter = painterResource(R.drawable.img_4),
+                    painter = painterResource(R.drawable.img_14),
                     contentDescription = "home",
                     modifier = Modifier.size(200.dp).clip(shape = RoundedCornerShape(10.dp)),
                 )
@@ -63,7 +66,9 @@ fun AboutScreen(navController: NavController){
         ){
             Spacer(modifier = Modifier.width(20.dp))
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp),
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{
+                    navController.navigate(ROUT_START)
+                },
                 elevation = CardDefaults.cardElevation(10.dp)
             ){
                 Column (
@@ -72,7 +77,7 @@ fun AboutScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center,
                 ){
                     Image(
-                        painter = painterResource(R.drawable.img_4),
+                        painter = painterResource(R.drawable.img_9),
                         contentDescription = "home",
                         modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
                     )
@@ -92,12 +97,12 @@ fun AboutScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center,
                 ){
                     Image(
-                        painter = painterResource(R.drawable.img_1),
-                        contentDescription = "home",
+                        painter = painterResource(R.drawable.img_10),
+                        contentDescription = "About",
                         modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
                     )
                     Text(
-                        text = "Products"
+                        text = "About"
                     )
                 }
             }
@@ -117,18 +122,20 @@ fun AboutScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center,
                 ){
                     Image(
-                        painter = painterResource(R.drawable.img_4),
+                        painter = painterResource(R.drawable.img_12),
                         contentDescription = "home",
                         modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
                     )
                     Text(
-                        text = "Home"
+                        text = "Contact"
                     )
                 }
             }
             Spacer(modifier = Modifier.width(20.dp))
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp),
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{
+                    navController.navigate(ROUT_ITEM)
+                },
                 elevation = CardDefaults.cardElevation(10.dp)
             ){
                 Column (
@@ -137,7 +144,7 @@ fun AboutScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center,
                 ){
                     Image(
-                        painter = painterResource(R.drawable.img_1),
+                        painter = painterResource(R.drawable.img_11),
                         contentDescription = "home",
                         modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
                     )
