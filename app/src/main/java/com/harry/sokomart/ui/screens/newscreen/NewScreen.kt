@@ -136,13 +136,23 @@ fun AboutScreen(navController: NavController) {
                     }
                     Spacer(modifier = Modifier.width(19.dp))
                     Card (
-                        modifier = Modifier.height(210.dp),
+                        modifier = Modifier.width(150.dp).height(210.dp),
                         elevation = CardDefaults.cardElevation(10.dp)
                     ){
-                        Image(
-                            painter = painterResource(R.drawable.img_12),
-                            contentDescription = "home",
-                        )
+                        Column (
+                            modifier = Modifier.fillMaxSize(),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center,
+                        ){
+                            Image(
+                                painter = painterResource(R.drawable.img_12),
+                                contentDescription = "home",
+                                modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
+                            )
+                            Text(
+                                text = "Contact"
+                            )
+                        }
                     }
                 }
 
