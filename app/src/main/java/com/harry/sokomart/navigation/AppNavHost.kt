@@ -20,7 +20,7 @@ import com.harry.sokomart.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_START
+    startDestination: String = ROUT_DASHBOARD
 ) {
 
     NavHost(
@@ -50,6 +50,9 @@ fun AppNavHost(
             MoreScreen(navController)
         }
         composable(ROUT_SERVICE) {
+            MoreScreen(navController)
+        }
+        composable(ROUT_SPLASH) {
             MoreScreen(navController)
         }
 
