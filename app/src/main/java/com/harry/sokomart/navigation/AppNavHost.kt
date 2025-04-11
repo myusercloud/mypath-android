@@ -55,6 +55,8 @@ fun AppNavHost(
         composable(ROUT_SPLASH) {
             MoreScreen(navController)
         }
-
+        composable(ROUT_FORM) {
+            MoreScreen(navController)
+        }
     }
 }

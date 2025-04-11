@@ -28,6 +28,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.R
 import com.harry.sokomart.ui.theme.blue
+import com.harry.sokomart.ui.theme.green
+import com.harry.sokomart.ui.theme.orange
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -102,6 +104,7 @@ fun AboutScreen(navController: NavController) {
                     Card (
                         modifier = Modifier.width(150.dp).height(250.dp),
                         elevation = CardDefaults.cardElevation(10.dp),
+                        colors = CardDefaults.cardColors(blue)
                     ){
                         Column (
                             modifier = Modifier.fillMaxSize(),
@@ -121,7 +124,8 @@ fun AboutScreen(navController: NavController) {
                     Spacer(modifier = Modifier.width(19.dp))
                     Card (
                         modifier = Modifier.width(150.dp).height(250.dp),
-                        elevation = CardDefaults.cardElevation(10.dp)
+                        elevation = CardDefaults.cardElevation(10.dp),
+                        colors = CardDefaults.cardColors(orange)
                     ){
                         Column (
                             modifier = Modifier.fillMaxSize(),
@@ -129,7 +133,7 @@ fun AboutScreen(navController: NavController) {
                             verticalArrangement = Arrangement.Center,
                         ){
                             Image(
-                                painter = painterResource(R.drawable.img_12),
+                                painter = painterResource(R.drawable.img_16),
                                 contentDescription = "home",
                                 modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
                             )
@@ -141,7 +145,8 @@ fun AboutScreen(navController: NavController) {
                     Spacer(modifier = Modifier.width(19.dp))
                     Card (
                         modifier = Modifier.width(150.dp).height(250.dp),
-                        elevation = CardDefaults.cardElevation(10.dp)
+                        elevation = CardDefaults.cardElevation(10.dp),
+                        colors = CardDefaults.cardColors(green)
                     ){
                         Column (
                             modifier = Modifier.fillMaxSize().horizontalScroll(rememberScrollState()),
