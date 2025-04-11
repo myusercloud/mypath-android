@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.R
+import com.harry.sokomart.ui.theme.blue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -100,7 +101,7 @@ fun AboutScreen(navController: NavController) {
                 Row (){
                     Card (
                         modifier = Modifier.width(150.dp).height(250.dp),
-                        elevation = CardDefaults.cardElevation(10.dp)
+                        elevation = CardDefaults.cardElevation(10.dp),
                     ){
                         Column (
                             modifier = Modifier.fillMaxSize(),
@@ -108,7 +109,7 @@ fun AboutScreen(navController: NavController) {
                             verticalArrangement = Arrangement.Center,
                         ){
                             Image(
-                                painter = painterResource(R.drawable.img_12),
+                                painter = painterResource(R.drawable.img_15),
                                 contentDescription = "home",
                                 modifier = Modifier.size(100.dp).clip(shape = RoundedCornerShape(10.dp)),
                             )
