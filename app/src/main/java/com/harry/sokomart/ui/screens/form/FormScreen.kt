@@ -32,7 +32,11 @@ fun FormScreen(navController: NavController){
         )
         Spacer(modifier = Modifier.height(10.dp))
 
+        //variables
         var fullname by remember { mutableStateOf("") }
+        var username by remember { mutableStateOf("") }
+        var email by remember { mutableStateOf("") }
+        var password by remember { mutableStateOf("") }
     }
 }
 
