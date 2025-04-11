@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -75,8 +76,10 @@ fun AboutScreen(navController: NavController) {
                     .padding(padding)
                     .padding(16.dp)
                     .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
             ) {
                 // Header
+                Spacer(modifier = Modifier.height(40.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(start = 20.dp).horizontalScroll(rememberScrollState()),
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -93,10 +96,10 @@ fun AboutScreen(navController: NavController) {
                     )
                 }
 
-                Spacer(modifier = Modifier.height(36.dp))
+                Spacer(modifier = Modifier.height(50.dp))
                 Row (){
                     Card (
-                        modifier = Modifier.width(150.dp).height(210.dp),
+                        modifier = Modifier.width(150.dp).height(250.dp),
                         elevation = CardDefaults.cardElevation(10.dp)
                     ){
                         Column (
@@ -116,7 +119,7 @@ fun AboutScreen(navController: NavController) {
                     }
                     Spacer(modifier = Modifier.width(19.dp))
                     Card (
-                        modifier = Modifier.width(150.dp).height(210.dp),
+                        modifier = Modifier.width(150.dp).height(250.dp),
                         elevation = CardDefaults.cardElevation(10.dp)
                     ){
                         Column (
@@ -136,11 +139,11 @@ fun AboutScreen(navController: NavController) {
                     }
                     Spacer(modifier = Modifier.width(19.dp))
                     Card (
-                        modifier = Modifier.width(150.dp).height(210.dp),
+                        modifier = Modifier.width(150.dp).height(250.dp),
                         elevation = CardDefaults.cardElevation(10.dp)
                     ){
                         Column (
-                            modifier = Modifier.fillMaxSize(),
+                            modifier = Modifier.fillMaxSize().horizontalScroll(rememberScrollState()),
                             horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.Center,
                         ){
