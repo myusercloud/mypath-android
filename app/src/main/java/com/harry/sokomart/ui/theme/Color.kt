@@ -1,7 +1,6 @@
 package com.harry.sokomart.ui.theme
 
 import androidx.compose.ui.graphics.Color
-
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
@@ -15,3 +14,4 @@ val white = Color(0xFFF8F8F8)
 val blue = Color(0xFF071388)
 val orange = Color(0xFFF57F17)
 val green = Color(0xFF098310)
+val gray = Color(0xFF989A98)

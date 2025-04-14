@@ -40,7 +40,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.harry.sokomart.R
+import com.harry.sokomart.navigation.ROUT_INTENT
 import com.harry.sokomart.navigation.ROUT_ITEM
+import com.harry.sokomart.navigation.ROUT_PHOME
 import com.harry.sokomart.ui.theme.mytheme
 import com.harry.sokomart.ui.theme.white
 
@@ -136,9 +138,7 @@ fun MoreScreen(navController: NavController){
         //row end
         Button(
             onClick = {
-                val simToolKitLaunchIntent =
-                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                navController.navigate(ROUT_PHOME)
             },
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(mytheme),
