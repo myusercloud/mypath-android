@@ -14,7 +14,7 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun PHome(navController: NavController) {
-    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+    Column(modifier = Modifier.fillMaxSize().padding(30.dp)) {
 
         // Top bar with profile and share icon
         Row(
